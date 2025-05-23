@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaxaDiffusion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #ffffff;
+      color: #333;
+    }
+    header {
+      background: #350dd6;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    section {
+      padding: 2rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      font-weight: 800;
+    }
+    .hero-image, .result-image {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .paper, .appendix {
+      margin-top: 2rem;
+    }
+    footer {
+      background: #222;
+      color: #aaa;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .section-block {
+      margin-bottom: 2rem;
+    }
+    .caption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TaxaDiffusion</h1>
+    <p>Progressively Trained Diffusion Model for Fine-Grained Species Generation</p>
+    <p><strong>Authors:</strong><br>
+      Amin Karimi Monsefi<sup>1</sup>, Mridul Khurana<sup>2</sup>, Rajiv Ramnath<sup>1</sup>,<br>
+      Anuj Karpatne<sup>2</sup>, Wei-Lun Chao<sup>1</sup>, Cheng Zhang<sup>3</sup><br>
+      <em><sup>1</sup>The Ohio State University, <sup>2</sup>Virginia Tech, <sup>3</sup>Texas A&amp;M University</em>
+    </p>
+  </header>
+
+  <section>
+    <h2>Motivation</h2>
+    <p>Fine-grained image generation is essential in scientific and biodiversity research but is challenged by class imbalance and visual similarities across categories. We noticed existing diffusion models often fail to distinguish subtle differences between species, especially in low-data regimes. Our approach mimics biological evolution by training diffusion models progressively through taxonomy.</p>
+    <img src="images/figure1_taxonomy_structure.jpg" alt="Figure 1 - Taxonomy Structure" class="hero-image">
+    <p class="caption"><strong>Figure 1.</strong> Taxonomy encodes a rich hierarchical structure for categorizing life. We propose TaxaDiffusion to leverage such knowledge to enable fine-grained, controllable image generation. Compared to Zero-Shot generation with vanilla Stable Diffusion and LoRA fine-tuning, TaxaDiffusion achieves higher accuracy and captures fine details that align closely with real images.</p>
+
+    <p>This hierarchical view suggests a strategy to break down the learning task into simpler subtasks, allowing knowledge transfer from common to rare species. It motivates a progressive training approach that aligns with evolutionary semantics.</p>
+
+    <img src="images/figure2_progressive_training.jpg" alt="Figure 2 - Progressive Training" class="hero-image">
+    <p class="caption"><strong>Figure 2.</strong> Generative examples of our approach on the FishNet dataset. As we progress through the taxonomy tree from Class to Order, Family, Genus, and finally Species, our model refines its understanding of distinguishing traits, generating realistic images that capture the unique visual characteristics at each level. For rare species with limited training samples, such as “Amphichaetodon Howensis” (4 samples), “Amphichaetodon Melbae” (1 sample), and “Chaetodon Humeralis” (5 samples), our taxonomy-informed, progressive training approach enables effective knowledge transfer from related species, allowing the model to generate morphologically accurate species images even with sparse data. The corresponding ground-truth images from FishNet are shown on the right.</p>
+  </section>
+
+  <section>
+    <h2>Model Architecture & Training</h2>
+    <p>We start from Stable Diffusion and adapt it using LoRA. We progressively freeze and expand modules tied to each taxonomy level — from Kingdom to Species. This encourages early learning of broad traits, with specialization introduced gradually. The architecture includes a CLIP-based text encoder for taxonomy and modular transformer layers that specialize across levels. Below is a high-level overview of the full training strategy.</p>
+    <img src="images/model_overview.jpg" alt="Model Overview" class="hero-image">
+    <p class="caption"><strong>Model Overview:</strong> TaxaDiffusion progressively integrates conditioning information from taxonomy using separate modules per level. Earlier modules encode shared traits; later ones refine species distinctions.</p>
+  </section>
+
+  <section>
+    <h2>Experiments & Results</h2>
+
+    <div class="section-block">
+      <h3>FishNet Dataset</h3>
+      <p>This dataset contains 17,000+ fish species. TaxaDiffusion excels in generating accurate species images even with fewer than 5 samples, leveraging taxonomic similarity. We outperform baseline Stable Diffusion, LoRA-tuned, and fully fine-tuned models.</p>
+      <img src="images/fishnet_results.jpg" alt="FishNet Results" class="result-image">
+    </div>
+
+    <div class="section-block">
+      <h3>iNaturalist Dataset</h3>
+      <p>Spanning 10,000 plant and animal species, this dataset highlights TaxaDiffusion’s robustness across broader biological domains. Our approach improves both FID and taxonomy alignment (BioCLIP score).</p>
+      <img src="images/inaturalist_results.jpg" alt="iNaturalist Results" class="result-image">
+    </div>
+
+    <div class="section-block">
+      <h3>BIOSCAN-1M Dataset</h3>
+      <p>This large-scale insect dataset includes microscope images with genetic labels. TaxaDiffusion handles high intra-class similarity by capturing morphology hierarchically, outperforming other models in taxonomic coherence.</p>
+      <img src="images/bioscan_results.png" alt="BIOSCAN-1M Results" class="result-image">
+    </div>
+
+    <div class="section-block">
+      <h3>Ablation of Guidance</h3>
+      <p>We evaluate the impact of classifier-free guidance scale on image fidelity and trait specificity. A moderate guidance level helps balance semantic conditioning with generative diversity. Below we show samples at different scales.</p>
+      <img src="images/ablation_guidance.jpg" alt="Ablation of Guidance" class="result-image">
+    </div>
+
+    <div class="section-block">
+      <h3>Comparison with State-of-the-Art</h3>
+      <p>We compare TaxaDiffusion to FineDiffusion on species-level image synthesis. Our model achieves higher visual and semantic fidelity, particularly for rare or underrepresented classes.</p>
+      <img src="images/comparison_sota.jpg" alt="Comparison with SOTA" class="result-image">
+    </div>
+
+  </section>
+
+  <!-- <section>
+    <h2>BibTeX</h2>
+    <pre>
+@inproceedings{taxadiffusion2025,
+  title={TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation},
+  author={Amin Karimi Monsefi and Mridul Khurana and Rajiv Ramnath and Anuj Karpatne and Wei-Lun Chao and Cheng Zhang},
+  booktitle={ICCV},
+  year={2025}
+}
+    </pre>
+  </section> -->
+
+  <footer>
+    © 2025 TaxaDiffusion Project | <a href="#">Code (coming soon)</a>
+  </footer>
+</body>
+</html>
