@@ -123,7 +123,7 @@
 
     <div class="section-block">
       <h3>Ablation of Guidance</h3>
-      <p>We evaluate the impact of classifier-free guidance scale on image fidelity and trait specificity. A moderate guidance level helps balance semantic conditioning with generative diversity. Below we show samples at different scales.</p>
+      <p>Our method, TaxaDiffusion, leverages hierarchical taxonomy levels—ranging from broad (Kingdom) to specific (Species)—to guide fine-grained image generation. Unlike conventional Classifier-Free Guidance (CFG), which uniformly combines conditional and unconditional signals, TaxaDiffusion progressively integrates hierarchical cues starting from the highest taxonomy level. This approach significantly enhances the model's ability to generate morphologically accurate and biologically relevant images. Visual comparisons demonstrate that TaxaDiffusion consistently captures detailed species-specific features more effectively than vanilla CFG, highlighting the advantage of hierarchical conditioning in generating precise, fine-grained imagery.</p>
       <img src="images/ablation_guidance.jpg" alt="Ablation of Guidance" class="result-image">
     </div>
 
