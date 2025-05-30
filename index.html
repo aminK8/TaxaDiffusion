@@ -16,7 +16,19 @@
       background: #000000;
       color: white;
       padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .header-content {
+      flex: 1 1 auto;
       text-align: center;
+    }
+    .header-logo {
+      width: 80px;
+      height: auto;
     }
     section {
       padding: 2rem 2rem;
@@ -63,24 +75,23 @@
 </head>
 <body>
   <header>
-    <img src="images/taxa.png" alt="Left Logo" class="header-logo">
-    <h1>TaxaDiffusion</h1>
-    <p>Progressively Trained Diffusion Model for Fine-Grained Species Generation</p>
-    <!-- <p><strong>Authors:</strong><br>
-      Amin Karimi Monsefi<sup>1</sup>, Mridul Khurana<sup>2</sup>, Rajiv Ramnath<sup>1</sup>,<br>
-      Anuj Karpatne<sup>2</sup>, Wei-Lun Chao<sup>1</sup>, Cheng Zhang<sup>3</sup><br>
-      <em><sup>1</sup>The Ohio State University, <sup>2</sup>Virginia Tech, <sup>3</sup>Texas A&amp;M University</em>
-    </p> -->
-    <p><strong>Authors:</strong><br>
-      <a href="https://7amin.github.io/" target="_blank">Amin Karimi Monsefi</a><sup>1</sup>, 
-      <a href="https://mridulk97.github.io/" target="_blank">Mridul Khurana</a><sup>2</sup>, 
-      <a href="https://cse.osu.edu/people/ramnath.6" target="_blank">Rajiv Ramnath</a><sup>1</sup>,<br>
-      <a href="https://anujkarpatne.github.io/" target="_blank">Anuj Karpatne</a><sup>2</sup>, 
-      <a href="https://sites.google.com/view/wei-lun-harry-chao/home" target="_blank">Wei-Lun Chao</a><sup>1</sup>, 
-      <a href="https://czhang0528.github.io/" target="_blank">Cheng Zhang</a><sup>3</sup><br>
-      <em><sup>1</sup>The Ohio State University, <sup>2</sup>Virginia Tech, <sup>3</sup>Texas A&amp;M University</em>
-    </p>
-      <img src="images/taxa.png" alt="Right Logo" class="header-logo">
+    <img src="images/logo_left.png" alt="Left Logo" class="header-logo">
+
+    <div class="header-content">
+      <h1>TaxaDiffusion</h1>
+      <p>Progressively Trained Diffusion Model for Fine-Grained Species Generation</p>
+      <p><strong>Authors:</strong><br>
+        <a href="https://7amin.github.io/" target="_blank">Amin Karimi Monsefi</a><sup>1</sup>, 
+        <a href="https://mridulk97.github.io/" target="_blank">Mridul Khurana</a><sup>2</sup>, 
+        <a href="https://cse.osu.edu/people/ramnath.6" target="_blank">Rajiv Ramnath</a><sup>1</sup>,<br>
+        <a href="https://anujkarpatne.github.io/" target="_blank">Anuj Karpatne</a><sup>2</sup>, 
+        <a href="https://sites.google.com/view/wei-lun-harry-chao/home" target="_blank">Wei-Lun Chao</a><sup>1</sup>, 
+        <a href="https://czhang0528.github.io/" target="_blank">Cheng Zhang</a><sup>3</sup><br>
+        <em><sup>1</sup>The Ohio State University, <sup>2</sup>Virginia Tech, <sup>3</sup>Texas A&amp;M University</em>
+      </p>
+    </div>
+
+    <img src="images/logo_right.png" alt="Right Logo" class="header-logo">
   </header>
 
   <section>
@@ -134,20 +145,7 @@
       <p>We compare TaxaDiffusion to FineDiffusion on species-level image synthesis. Our model achieves higher visual and semantic fidelity, particularly for rare or underrepresented classes.</p>
       <img src="images/comparison_sota.jpg" alt="Comparison with SOTA" class="result-image">
     </div>
-
   </section>
-
-  <!-- <section>
-    <h2>BibTeX</h2>
-    <pre>
-@inproceedings{taxadiffusion2025,
-  title={TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation},
-  author={Amin Karimi Monsefi and Mridul Khurana and Rajiv Ramnath and Anuj Karpatne and Wei-Lun Chao and Cheng Zhang},
-  booktitle={ICCV},
-  year={2025}
-}
-    </pre>
-  </section> -->
 
   <footer>
     © 2025 TaxaDiffusion Project | <a href="#">Code (coming soon)</a>
