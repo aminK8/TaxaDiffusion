@@ -5,6 +5,12 @@
 
 ---
 
+## 🧑‍💻 Authors
+
+**Amin Karimi Monsefi**, **Mridul Khurana**, **Rajiv Ramnath**, **Anuj Karpatne**, **Wei-Lun Chao**, **Cheng Zhang**
+
+---
+
 ## ✨ Highlights
 
 **TaxaDiffusion** introduces a progressive training strategy for fine-grained species generation using diffusion models. We incorporate taxonomic hierarchies to guide generation and improve fidelity at each biological level (Order → Family → Genus → Species).
@@ -17,13 +23,6 @@
 
 ![overview](images/model_overview.jpg)
 *Progressive training from high-level taxonomy to fine-grained species generation.*
-
----
-
-## 🧑‍💻 Authors
-
-**Amin Karimi Monsefi**, **Mridul Khurana**, **Rajiv Ramnath**, **Anuj Karpatne**, **Wei-Lun Chao**, **Cheng Zhang**
-
 
 ---
 
@@ -42,15 +41,12 @@ conda activate taxa_diffusion
 
 ## Train
 
-For run training, use the appropriate command based on the model:
 
 ```bash
 bash job_training.sh
 ```
 
 ## Inference
-
-To run inference, use the appropriate command based on the model:
 
 ```bash
 bash job_inference.sh
