@@ -22,12 +22,13 @@
 </p>
 
 
-![overview](images/figure1_taxonomy_structure.jpg)  
-
 We propose a **stage-wise training strategy**, where the model is first trained on coarse taxonomic categories (e.g., Class or Order) and is gradually fine-tuned on finer labels (e.g., Genus and Species). This allows the diffusion model to **incrementally learn from general visual semantics to subtle, species-specific cues**.
 
 
-![overview](images/figure2_progressive_training.jpg)  
+<p align="center">
+  <img src="images/figure2_progressive_training.jpg" alt="overview" width="50%">
+</p>
+
 
 **Key contributions:**
 
