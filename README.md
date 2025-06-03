@@ -14,15 +14,24 @@
 
 ## ✨ Highlights
 
-**TaxaDiffusion** introduces a progressive training strategy for fine-grained species generation using diffusion models. We incorporate taxonomic hierarchies to guide generation and improve fidelity at each biological level (Order → Family → Genus → Species).
+**TaxaDiffusion** is a novel framework that tackles the challenge of generating **fine-grained species-level images** using diffusion models. Biological species often differ by subtle visual traits, making it difficult for standard generative models to capture and preserve these distinctions. To address this, TaxaDiffusion leverages the **hierarchical nature of biological taxonomy** to progressively condition and guide the generation process.
+
+We propose a **stage-wise training strategy**, where the model is first trained on coarse taxonomic categories (e.g., Class or Order) and is gradually fine-tuned on finer labels (e.g., Genus and Species). This allows the diffusion model to **incrementally learn from general visual semantics to subtle, species-specific cues**.
 
 **Key contributions:**
-- Progressive taxonomy-aware generation.
-- Stage-wise diffusion training from coarse to fine labels.
-- Evaluation on **FishNet**, **BIOSCAN-1M**, and **iNaturalist** datasets.
-- Outperforms SOTA baselines in both image quality (FID, LPIPS) and text-image alignment (BioCLIP).
 
-![overview](images/model_overview.jpg)
+- 🧬 **Taxonomy-aware progressive training**: We introduce a novel multi-stage framework that conditions diffusion generation on biological hierarchy, improving structure and diversity.
+- 🔁 **Stage-wise refinement of generations**: Each stage refines the model’s output by incorporating finer taxonomic labels, resulting in more accurate and biologically coherent species synthesis.
+- 📊 **Comprehensive evaluation on three datasets**:
+  - **FishNet** – 17,000+ fish species with high inter-class similarity.
+  - **BIOSCAN-1M** – Microscopic images of 8,355 insect species.
+  - **iNaturalist** – Diverse set spanning 10,000 plant and animal species.
+- 🏆 **State-of-the-art results**:
+  - Achieves superior FID and LPIPS scores for image quality.
+  - Improves BioCLIP-based alignment between species text labels and generated images.
+  - Demonstrates strong generalization across single-group and mixed-species datasets.
+
+![overview](images/model_overview.jpg)  
 *Progressive training from high-level taxonomy to fine-grained species generation.*
 
 ---
