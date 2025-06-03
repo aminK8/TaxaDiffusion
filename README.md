@@ -1,4 +1,18 @@
-# 🐟 TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation
+# 🐟 <h1 align="center">
+  <span style="color:#e6194B;">T</span>
+  <span style="color:#f58231;">a</span>
+  <span style="color:#ffe119;">x</span>
+  <span style="color:#bfef45;">a</span>
+  <span style="color:#3cb44b;">D</span>
+  <span style="color:#42d4f4;">i</span>
+  <span style="color:#4363d8;">f</span>
+  <span style="color:#911eb4;">f</span>
+  <span style="color:#f032e6;">u</span>
+  <span style="color:#a9a9a9;">s</span>
+  <span style="color:#fabed4;">i</span>
+  <span style="color:#dcbeff;">o</span>
+  <span style="color:#469990;">n</span>
+</h1>: Progressively Trained Diffusion Model for Fine-Grained Species Generation
 
 [![Project Page](https://img.shields.io/badge/Webpage-🖼️%20Project%20Page-blue)](https://amink8.github.io/TaxaDiffusion/)
 [![arXiv](https://img.shields.io/badge/arXiv-2506.01923-b31b1b.svg)](https://arxiv.org/pdf/2506.01923)
@@ -15,7 +29,7 @@
 - Evaluation on **FishNet**, **BIOSCAN-1M**, and **iNaturalist** datasets.
 - Outperforms SOTA baselines in both image quality (FID, LPIPS) and text-image alignment (BioCLIP).
 
-![overview](assets/taxa_overview.png)
+![overview](images/model_overview.jpg)
 *Progressive training from high-level taxonomy to fine-grained species generation.*
 
 ---
