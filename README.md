@@ -16,7 +16,13 @@
 
 **TaxaDiffusion** is a novel framework that tackles the challenge of generating **fine-grained species-level images** using diffusion models. Biological species often differ by subtle visual traits, making it difficult for standard generative models to capture and preserve these distinctions. To address this, TaxaDiffusion leverages the **hierarchical nature of biological taxonomy** to progressively condition and guide the generation process.
 
+
+![overview](images/figure1_taxonomy_structure.jpg)  
+
 We propose a **stage-wise training strategy**, where the model is first trained on coarse taxonomic categories (e.g., Class or Order) and is gradually fine-tuned on finer labels (e.g., Genus and Species). This allows the diffusion model to **incrementally learn from general visual semantics to subtle, species-specific cues**.
+
+
+![overview](images/figure2_taxonomy_structure.jpg)  
 
 **Key contributions:**
 
