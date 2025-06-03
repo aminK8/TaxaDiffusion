@@ -50,6 +50,13 @@ We propose a **stage-wise training strategy**, where the model is first trained 
 
 ## 📦 Installation
 
+Download the dataset:
+
+```bash
+#FishNet Dataset
+https://fishnet-2023.github.io/
+```
+
 Clone the repository and set up the environment:
 
 ```bash
