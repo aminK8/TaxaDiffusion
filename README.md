@@ -40,6 +40,21 @@ conda activate taxa_diffusion
 ```
 
 
+## Train
+
+For run training, use the appropriate command based on the model:
+
+```bash
+bash job_training.sh
+```
+
+## Inference
+
+To run inference, use the appropriate command based on the model:
+
+```bash
+bash job_inference.sh
+```
 
 ## Citation
 If you liked our paper, please consider citing it
