@@ -178,11 +178,6 @@ class INaturalistDataset(Dataset):
             note = "Image not available, using fallback image"
             error_loaded_image = True
 
-        # Resize image based on training or evaluation mode
-        # if self.training:
-        #     image, crop_sizes = self.resize_image_random_cropping(image, self.img_size)
-        # else:
-        #     image = self.resize_image_fixed_cropping(image, self.img_size, crop_sizes)
         image, crop_sizes = self.resize_image_random_cropping(image, self.img_size)
         image = (image.astype(np.float32) / 127.5) - 1.0
         image = image.transpose(2, 0, 1)

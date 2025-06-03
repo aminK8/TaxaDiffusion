@@ -41,10 +41,10 @@ train:
   add_lora_unet: True
   lora_rank: 4
   taxonomy_cut_off: 1
-  pretrained_model_path: 'ddpm_models'
+  pretrained_model_path: 'runwayml/stable-diffusion-v1-5'
   pretrained_model_path_last_part: ''
-  pretrained_lora_model: '/users/PAS0536/aminr8/TaxonomyGen/output/v3_taxonomy_gen_osc-2024-11-02T10-55-51_taxonomy_cut_off_0/checkpoints/lora_checkpoint-epoch-20/pytorch_lora_weights.safetensors'
-  checkpoint_path: '/users/PAS0536/aminr8/TaxonomyGen/output/v3_taxonomy_gen_osc-2024-11-02T16-15-58/checkpoints/checkpoint-epoch-8.ckpt'
+  pretrained_lora_model: ''
+  checkpoint_path: ''
   is_debug: False
   global_seed: 42
   output_dir: 'output'

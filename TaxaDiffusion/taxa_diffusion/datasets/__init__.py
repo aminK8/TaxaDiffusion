@@ -1,0 +1,3 @@
+from taxa_diffusion.datasets.inaturalist import INaturalistDataset
+from taxa_diffusion.datasets.fishnet import FishDataset
+from taxa_diffusion.datasets.bioscan import BioScanDataset
