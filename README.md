@@ -50,11 +50,17 @@ We propose a **stage-wise training strategy**, where the model is first trained 
 
 ## 📦 Installation
 
-Download the dataset:
+Download the dataset and change the config with the path of the dataset:
 
 ```bash
 #FishNet Dataset
 https://fishnet-2023.github.io/
+
+#BIOSCAN-1M Dataset
+https://github.com/bioscan-ml/BIOSCAN-1M
+
+# iNaturalist Dataset
+https://www.tensorflow.org/datasets/catalog/i_naturalist2021
 ```
 
 Clone the repository and set up the environment:
