@@ -90,13 +90,10 @@ bash job_inference.sh
 ## Citation
 If you liked our paper, please consider citing it
 ```bibtex
-@misc{monsefi2025taxadiffusionprogressivelytraineddiffusion,
-      title={TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation}, 
-      author={Amin Karimi Monsefi and Mridul Khurana and Rajiv Ramnath and Anuj Karpatne and Wei-Lun Chao and Cheng Zhang},
-      year={2025},
-      eprint={2506.01923},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2506.01923}, 
+@article{monsefi2025taxadiffusion,
+  title={TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation},
+  author={Monsefi, Amin Karimi and Khurana, Mridul and Ramnath, Rajiv and Karpatne, Anuj and Chao, Wei-Lun and Zhang, Cheng},
+  journal={arXiv preprint arXiv:2506.01923},
+  year={2025}
 }
 ```
