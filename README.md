@@ -1,5 +1,6 @@
 # 🐟 TaxaDiffusion: Progressively Trained Diffusion Model for Fine-Grained Species Generation
 
+📌 **Accepted to ICCV 2025**
 
 [![Project Page](https://img.shields.io/badge/Webpage-🖼️%20Project%20Page-blue)](https://amink8.github.io/TaxaDiffusion/)
 [![arXiv](https://img.shields.io/badge/arXiv-2506.01923-b31b1b.svg)](https://arxiv.org/pdf/2506.01923)
